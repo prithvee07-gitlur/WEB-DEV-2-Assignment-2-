@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Weather Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-wrapper">
+
+        <header class="app-header">
+            <span class="header-icon">⛅</span>
+            <h1>Async Weather Tracker</h1>
+        </header>
+
+        <main class="main-content">
+
+            <div class="left-column">
+
+                <div class="card">
+                    <h2 class="card-title">Search City</h2>
+                    <div class="search-row">
+                        <input type="text" id="city-input" placeholder="Enter city name...">
+                        <button id="search-btn">Search</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">Search History</h2>
+                    <div id="history-list">
+                        <p id="no-history">No recent searches</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="right-column">
+                <div class="card" id="weather-card">
+                    <h2 class="card-title">Weather Info</h2>
+
+                    <div id="loader" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Fetching...</p>
+                    </div>
+
+                    <div class="error-msg" id="error-box" style="display: none;">
+                        <p id="error-text"></p>
+                    </div>
+                    <p class="placeholder" id="placeholder">Search a city to see weather info</p>
+
+                    <table id="weather-table" style="display: none;">
+                        <tr>
+                            <td class="label">City</td>
+                            <td class="value" id="city-name">--</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Temp</td>
+                            <td class="value" id="temperature">--</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Weather</td>
+                            <td class="value" id="weather-desc">--</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Humidity</td>
+                            <td class="value" id="humidity">--</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Wind</td>
+                            <td class="value" id="wind">--</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <section class="console-section">
+            <h2 class="console-title">Console – Event Loop</h2>
+            <hr>
+            <div id="console-output"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
